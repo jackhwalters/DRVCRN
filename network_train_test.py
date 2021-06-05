@@ -29,7 +29,6 @@ def drvcrn_train(drvcrn, noisy_names, clean_names, optimizer,\
         loss = -criterion(output_waveform, clean)
         loss.backward()
         optimizer.step()
-        print('loss.item(): ', loss.item())
         running_loss += loss.item()
 
     return -running_loss / len(noisy_names)

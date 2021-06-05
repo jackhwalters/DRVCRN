@@ -33,15 +33,11 @@ train_test = get_train_test_name(dns_path)
 train_noisy_names, train_clean_names, test_noisy_names, test_clean_names = \
     get_all_names(train_test, dns_path=dns_path)
 
-train_noisy_waveform = []
-train_clean_waveform = []
-test_noisy_waveform = []
-test_clean_waveform = []
-
 train_noisy_waveform, train_clean_waveform, test_noisy_waveform, test_clean_waveform = \
     load_waveform(train_noisy_names, train_clean_names, test_noisy_names, test_clean_names, sr)
 
 
+print("\nBegin train")
 train_losses = []
 test_losses = []
 for i in range(n_epochs):
